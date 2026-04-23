@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Tonel | Financeiro</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body data-page="financeiro">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="financeiro.html">
+        <img src="./assets/img/logo-white.svg" alt="Eco Tonel">
+        <div class="brand-meta"><strong>Financeiro e Precificação</strong><span data-session-label></span></div>
+      </a>
+      <nav class="nav">
+        <a data-role="gestao" href="gestao.html">Gestão</a>
+        <a data-role="operacao" href="operacao.html">Operação</a>
+        <a data-role="administrativo" href="administrativo.html">Administrativo</a>
+        <a data-role="financeiro" href="financeiro.html">Financeiro</a>
+        <a data-role="comercial" href="comercial.html">Comercial</a>
+        <button class="ghost-btn" data-action="logout">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="section-title"><h2>Painel financeiro</h2><p>Entradas, saídas e saldo com leitura imediata.</p></section>
+      <div class="kpi-grid">
+        <div class="kpi"><span>Entradas</span><strong id="finEntradas">R$ 0,00</strong></div>
+        <div class="kpi"><span>Saídas</span><strong id="finSaidas">R$ 0,00</strong></div>
+        <div class="kpi"><span>Saldo</span><strong id="finSaldo">R$ 0,00</strong></div>
+        <div class="kpi"><span>Lançamentos</span><strong id="finQtde">0</strong></div>
+      </div>
+
+      <section class="section-title"><h2>Novo lançamento</h2><p>Registre receitas e despesas do dia.</p></section>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Cadastro financeiro</h3>
+          <p class="lead">Use para controle de locação, combustível, manutenção e caixa.</p>
+          <form id="financeiroForm">
+            <div class="form-grid">
+              <div><label>Data<input type="date" name="data" required></label></div>
+              <div><label>Tipo<select name="tipo"><option>Entrada</option><option>Saída</option></select></label></div>
+              <div><label>Categoria<input name="categoria" placeholder="Ex: Locação, combustível..." required></label></div>
+              <div><label>Valor<input type="number" name="valor" step="0.01" min="0" required></label></div>
+              <div class="full"><label>Descrição<textarea name="descricao" required></textarea></label></div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Salvar lançamento</button>
+              <button class="btn btn-secondary" type="button" id="resetDemoBtn">Restaurar demo</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Movimentação</h3>
+          <p class="lead">Todos os lançamentos mais recentes.</p>
+          <div id="financeiroTable"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

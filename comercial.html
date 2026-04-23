@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Tonel | Comercial</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body data-page="comercial">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="comercial.html">
+        <img src="./assets/img/logo-white.svg" alt="Eco Tonel">
+        <div class="brand-meta"><strong>Comercial e Atendimento</strong><span data-session-label></span></div>
+      </a>
+      <nav class="nav">
+        <a data-role="gestao" href="gestao.html">Gestão</a>
+        <a data-role="operacao" href="operacao.html">Operação</a>
+        <a data-role="administrativo" href="administrativo.html">Administrativo</a>
+        <a data-role="financeiro" href="financeiro.html">Financeiro</a>
+        <a data-role="comercial" href="comercial.html">Comercial</a>
+        <button class="ghost-btn" data-action="logout">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="section-title"><h2>Painel comercial</h2><p>Leads, propostas e potencial de fechamento.</p></section>
+      <div class="kpi-grid">
+        <div class="kpi"><span>Total de leads</span><strong id="comLeads">0</strong></div>
+        <div class="kpi"><span>Pipeline</span><strong id="comPipeline">R$ 0,00</strong></div>
+        <div class="kpi"><span>Propostas enviadas</span><strong id="comPropostas">0</strong></div>
+        <div class="kpi"><span>Contato inicial</span><strong id="comContato">0</strong></div>
+      </div>
+
+      <section class="section-title"><h2>Novo lead</h2><p>Cadastre oportunidades e acompanhe a negociação.</p></section>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Cadastro comercial</h3>
+          <p class="lead">Ideal para pedidos de orçamento, parceiros e novos clientes.</p>
+          <form id="comercialForm">
+            <div class="form-grid">
+              <div><label>Nome do lead<input name="nome" required></label></div>
+              <div><label>Canal<select name="canal"><option>WhatsApp</option><option>Instagram</option><option>Site</option><option>Indicação</option><option>Ligação</option></select></label></div>
+              <div><label>Interesse<input name="interesse" placeholder="Ex: locação mensal, coleta avulsa" required></label></div>
+              <div><label>Valor estimado<input type="number" name="valor" step="0.01" min="0" required></label></div>
+              <div><label>Etapa<select name="etapa"><option>Contato inicial</option><option>Proposta enviada</option><option>Negociação</option><option>Fechado</option></select></label></div>
+              <div class="full"><label>Observação<textarea name="observacao"></textarea></label></div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Salvar lead</button>
+              <button class="btn btn-secondary" type="button" id="resetDemoBtn">Restaurar demo</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Oportunidades cadastradas</h3>
+          <p class="lead">Pipeline comercial sempre visível.</p>
+          <div id="comercialTable"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

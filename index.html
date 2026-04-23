@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Tonel | Login</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body data-page="login">
+  <main class="login-wrap">
+    <section class="login-shell">
+      <div class="login-panel">
+        <div class="badge">Sistema completo por áreas</div>
+        <img src="./assets/img/logo.svg" alt="Eco Tonel" style="height:58px;margin-top:18px;width:auto;">
+        <h1>Painel Eco Tonel com visual novo, logo nova e tudo pronto para uso.</h1>
+        <p>
+          O pacote antigo ficou branco porque dependia do motor de template do Google Apps Script e não funcionava direito ao abrir como arquivo estático.
+          Nesta versão, o site está <span class="highlight">100% funcional localmente ou no GitHub</span>, com login separado, páginas por área e salvamento automático no navegador.
+        </p>
+        <div class="hero-points">
+          <div class="hero-point">
+            <strong>Operação e logística</strong>
+            Coletas, endereços, tambores, equipe e status.
+          </div>
+          <div class="hero-point">
+            <strong>Administrativo</strong>
+            Documentos, contratos, vencimentos e pendências.
+          </div>
+          <div class="hero-point">
+            <strong>Financeiro</strong>
+            Entradas, saídas, categorias e saldo.
+          </div>
+          <div class="hero-point">
+            <strong>Comercial</strong>
+            Leads, propostas, interesse e pipeline.
+          </div>
+        </div>
+        <div class="login-credentials">
+          <div class="item"><strong>Gestão</strong><br>gestao / 123456</div>
+          <div class="item"><strong>Operação</strong><br>operacao / 123456</div>
+          <div class="item"><strong>Administrativo</strong><br>administrativo / 123456</div>
+          <div class="item"><strong>Financeiro</strong><br>financeiro / 123456</div>
+          <div class="item"><strong>Comercial</strong><br>comercial / 123456</div>
+        </div>
+      </div>
+
+      <div class="login-card">
+        <img class="logo" src="./assets/img/logo-white.svg" alt="Eco Tonel">
+        <h2 style="margin:0 0 8px;">Entrar no sistema</h2>
+        <p class="help-text" style="margin:0 0 18px;">Use o login da área correspondente.</p>
+        <form id="loginForm" class="grid" autocomplete="on">
+          <div>
+            <label for="user">Área / usuário</label>
+            <input id="user" name="user" type="text" placeholder="Ex: operacao" required>
+          </div>
+          <div>
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" placeholder="Digite sua senha" required>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Entrar</button>
+            <button class="btn btn-secondary" type="button" onclick="localStorage.clear(); location.reload();">Limpar dados locais</button>
+          </div>
+        </form>
+        <p class="small-note" style="margin-top:18px;">
+          Esta versão usa armazenamento local para você testar imediatamente. Ao publicar no GitHub, já abre com a identidade nova da Eco Tonel sem ficar branco.
+        </p>
+        <div class="footer">Eco Tonel • Sistema por áreas • versão visual corrigida</div>
+      </div>
+    </section>
+  </main>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

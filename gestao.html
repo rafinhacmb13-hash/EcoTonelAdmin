@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Tonel | Gestão</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body data-page="gestao">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="gestao.html">
+        <img src="./assets/img/logo-white.svg" alt="Eco Tonel">
+        <div class="brand-meta"><strong>Gestão Geral</strong><span data-session-label></span></div>
+      </a>
+      <nav class="nav">
+        <a data-role="gestao" href="gestao.html">Gestão</a>
+        <a data-role="operacao" href="operacao.html">Operação</a>
+        <a data-role="administrativo" href="administrativo.html">Administrativo</a>
+        <a data-role="financeiro" href="financeiro.html">Financeiro</a>
+        <a data-role="comercial" href="comercial.html">Comercial</a>
+        <button class="ghost-btn" data-action="logout">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="hero">
+        <div>
+          <div class="badge">Painel executivo</div>
+          <h1>Visão completa da operação Eco Tonel.</h1>
+          <p>Resumo rápido das áreas com leitura clara, visual corrigido e identidade nova aplicada em todo o sistema.</p>
+          <div class="hero-points">
+            <div class="hero-point"><strong>Controle total</strong>Operação, documentos, caixa e comercial em um só lugar.</div>
+            <div class="hero-point"><strong>Teste imediato</strong>Funciona localmente e no GitHub sem depender de template quebrado.</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="./assets/img/logo.svg" alt="Eco Tonel">
+          <small>Aqui você acompanha os principais indicadores e registra orientações estratégicas para a equipe.</small>
+        </div>
+      </section>
+
+      <section class="section-title"><h2>Indicadores principais</h2><p>Atualizados com base nos cadastros salvos no navegador.</p></section>
+      <div class="kpi-grid">
+        <div class="kpi"><span>Coletas registradas</span><strong id="gestaoColetas">0</strong></div>
+        <div class="kpi"><span>Documentos ativos</span><strong id="gestaoDocs">0</strong></div>
+        <div class="kpi"><span>Leads comerciais</span><strong id="gestaoLeads">0</strong></div>
+        <div class="kpi"><span>Saldo atual</span><strong id="gestaoSaldo">R$ 0,00</strong></div>
+      </div>
+
+      <section class="section-title"><h2>Direcionamento da gestão</h2><p>Cadastre observações estratégicas para consulta rápida.</p></section>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Nova nota</h3>
+          <p class="lead">Registre metas, prioridades ou alertas internos.</p>
+          <form id="gestaoForm">
+            <div class="form-grid">
+              <div class="full"><input name="titulo" placeholder="Título da nota" required></div>
+              <div class="full"><textarea name="texto" placeholder="Descreva a orientação da semana..." required></textarea></div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Salvar nota</button>
+              <button class="btn btn-secondary" type="button" id="resetDemoBtn">Restaurar demo</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Notas registradas</h3>
+          <p class="lead">Histórico rápido das últimas decisões.</p>
+          <ul class="list-clean" id="notasList"></ul>
+        </div>
+      </div>
+
+      <section class="section-title"><h2>Resumo por área</h2><p>Últimos dados lançados em cada setor.</p></section>
+      <div class="grid grid-3">
+        <div class="card"><h3>Operação</h3><div id="gestaoResumoOperacao"></div></div>
+        <div class="card"><h3>Financeiro</h3><div id="gestaoResumoFinanceiro"></div></div>
+        <div class="card"><h3>Comercial</h3><div id="gestaoResumoComercial"></div></div>
+      </div>
+    </div>
+  </main>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

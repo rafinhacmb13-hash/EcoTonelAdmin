@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Tonel | Administrativo</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body data-page="administrativo">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="administrativo.html">
+        <img src="./assets/img/logo-white.svg" alt="Eco Tonel">
+        <div class="brand-meta"><strong>Administrativo</strong><span data-session-label></span></div>
+      </a>
+      <nav class="nav">
+        <a data-role="gestao" href="gestao.html">Gestão</a>
+        <a data-role="operacao" href="operacao.html">Operação</a>
+        <a data-role="administrativo" href="administrativo.html">Administrativo</a>
+        <a data-role="financeiro" href="financeiro.html">Financeiro</a>
+        <a data-role="comercial" href="comercial.html">Comercial</a>
+        <button class="ghost-btn" data-action="logout">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="section-title"><h2>Painel administrativo</h2><p>Contratos, comprovantes e vencimentos centralizados.</p></section>
+      <div class="kpi-grid">
+        <div class="kpi"><span>Total de registros</span><strong id="admTotal">0</strong></div>
+        <div class="kpi"><span>Pendentes</span><strong id="admPendentes">0</strong></div>
+        <div class="kpi"><span>Em análise</span><strong id="admAnalise">0</strong></div>
+        <div class="kpi"><span>Vencendo em 7 dias</span><strong id="admVencendo">0</strong></div>
+      </div>
+
+      <section class="section-title"><h2>Novo documento</h2><p>Cadastre documentos e acompanhe a situação.</p></section>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Cadastro administrativo</h3>
+          <p class="lead">Ideal para contratos, comprovantes, ordens de serviço e cadastro interno.</p>
+          <form id="administrativoForm">
+            <div class="form-grid">
+              <div><label>Cliente<input name="cliente" required></label></div>
+              <div><label>Tipo<select name="tipo"><option>Contrato</option><option>Comprovante</option><option>Ordem de serviço</option><option>Cadastro</option></select></label></div>
+              <div><label>Vencimento<input type="date" name="vencimento" required></label></div>
+              <div><label>Status<select name="status"><option>Pendente</option><option>Em análise</option><option>Regularizado</option></select></label></div>
+              <div class="full"><label>Observação<textarea name="observacao"></textarea></label></div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Salvar registro</button>
+              <button class="btn btn-secondary" type="button" id="resetDemoBtn">Restaurar demo</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Documentos cadastrados</h3>
+          <p class="lead">Histórico e acompanhamento rápido.</p>
+          <div id="administrativoTable"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

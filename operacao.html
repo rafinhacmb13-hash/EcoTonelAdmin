@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Tonel | Operação</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body data-page="operacao">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="operacao.html">
+        <img src="./assets/img/logo-white.svg" alt="Eco Tonel">
+        <div class="brand-meta"><strong>Operação e Logística</strong><span data-session-label></span></div>
+      </a>
+      <nav class="nav">
+        <a data-role="gestao" href="gestao.html">Gestão</a>
+        <a data-role="operacao" href="operacao.html">Operação</a>
+        <a data-role="administrativo" href="administrativo.html">Administrativo</a>
+        <a data-role="financeiro" href="financeiro.html">Financeiro</a>
+        <a data-role="comercial" href="comercial.html">Comercial</a>
+        <button class="ghost-btn" data-action="logout">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="section-title"><h2>Indicadores da operação</h2><p>Coletas, roteiros e volume controlado.</p></section>
+      <div class="kpi-grid">
+        <div class="kpi"><span>Total de coletas</span><strong id="operacaoTotal">0</strong></div>
+        <div class="kpi"><span>Tambores programados</span><strong id="operacaoTambores">0</strong></div>
+        <div class="kpi"><span>Em rota</span><strong id="operacaoEmRota">0</strong></div>
+        <div class="kpi"><span>Pendentes</span><strong id="operacaoPendentes">0</strong></div>
+      </div>
+
+      <section class="section-title"><h2>Nova coleta</h2><p>Cadastre um atendimento e atualize o painel.</p></section>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Cadastro operacional</h3>
+          <p class="lead">Preencha os dados para organizar a execução.</p>
+          <form id="operacaoForm">
+            <div class="form-grid">
+              <div><label>Data<input type="date" name="data" required></label></div>
+              <div><label>Status<select name="status"><option>Agendada</option><option>Em rota</option><option>Concluída</option><option>Pendente</option></select></label></div>
+              <div><label>Cliente<input name="cliente" required></label></div>
+              <div><label>Equipe / motorista<input name="motorista" required></label></div>
+              <div class="full"><label>Endereço<input name="endereco" required></label></div>
+              <div><label>Quantidade de tambores<input type="number" min="1" name="tambores" required></label></div>
+              <div class="full"><label>Observação<textarea name="observacao" placeholder="Ex: acesso controlado, foto obrigatória, triagem específica..."></textarea></label></div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Salvar coleta</button>
+              <button class="btn btn-secondary" type="button" id="resetDemoBtn">Restaurar demo</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Agenda operacional</h3>
+          <p class="lead">Confira os registros mais recentes da equipe.</p>
+          <div id="operacaoTable"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
